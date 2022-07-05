@@ -42,7 +42,7 @@ class _AuctionPageState extends State<AuctionPage> {
   bool isPresent = false;
   bool isFuture = false;
   late var end_time;
-
+  late String formattedDate;
 
   @override
   void initState() {
@@ -61,6 +61,7 @@ class _AuctionPageState extends State<AuctionPage> {
     }
     print(end);
     time1 = DateFormat.Hms().format(widget.date);
+    formattedDate = DateFormat('dd-MM-yyyy').format(widget.date);
   }
 
   Future<void> placeBid(int bidIncrement) async{
@@ -127,6 +128,12 @@ class _AuctionPageState extends State<AuctionPage> {
               fontSize: 20,
             ),
           ),
+            Text(
+              'Auction Start Date: ${formattedDate}',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
           ] else if (isPresent) ... [
           Text(
             (widget.bidder!='') ? 'Bidder email: ${widget.bidder}' : 'No bids yet',

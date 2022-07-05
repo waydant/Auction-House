@@ -54,7 +54,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       ),
       body: Center(
         // child: _widgetOptions.elementAt(_selectedIndex),
-        child: (_selectedIndex==0)?PresentPage():(_selectedIndex==1)?PastPage():FuturePage(),
+        child: (_selectedIndex==0)?PastPage():(_selectedIndex==1)?PresentPage():FuturePage(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
